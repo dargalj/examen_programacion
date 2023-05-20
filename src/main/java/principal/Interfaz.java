@@ -4,10 +4,13 @@
  */
 package principal;
 
+import errores.telefonoIncorrecto;
 import guarderia.Gato;
 import guarderia.Perro;
 import guarderia.Registro;
 import java.time.LocalDateTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -214,11 +217,19 @@ public class Interfaz extends javax.swing.JFrame {
     private void jBRegsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegsActionPerformed
         // TODO add your handling code here:
         if(jBPerro.isEnabled()){
-            pe = new Perro(jTFNomDueño.getText(), jTFNomAnimal.getText(), jTFTele.getText());
+            try {
+                pe = new Perro(jTFNomDueño.getText(), jTFNomAnimal.getText(), jTFTele.getText());
+            } catch (telefonoIncorrecto ex) {
+                System.out.println("El telefono tiene que tener 9 digitos");
+            }
             regs.crearRegistro(LocalDateTime.now(), pe);
         }
         else{
-            ga = new Gato(jTFNomDueño.getText(), jTFNomAnimal.getText(), jTFTele.getText());
+            try {
+                ga = new Gato(jTFNomDueño.getText(), jTFNomAnimal.getText(), jTFTele.getText());
+            } catch (telefonoIncorrecto ex) {
+                System.out.println("El telefono tiene que tener 9 digitos");
+            }
             regs.crearRegistro(LocalDateTime.now(), ga);
         }
 

@@ -25,11 +25,11 @@ public abstract class Animal {
         this.nombreAnimal = nombreAnimal;
         this.nomnbreDueño = nomnbreDueño;
         //if(this.telefono.matches("[0-9]{9}")){
-        if(this.telefono.length() < 9){
-            this.telefono = telefono;
+        if(this.telefono.matches("[0-9]{9}")){
+            throw new telefonoIncorrecto();
         }
         else{
-            throw new telefonoIncorrecto();
+            this.telefono = telefono;
         }
 
     }
