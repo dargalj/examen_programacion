@@ -4,6 +4,7 @@
  */
 package guarderia;
 
+import errores.telefonoIncorrecto;
 import java.time.LocalDateTime;
 
 /**
@@ -20,10 +21,16 @@ public abstract class Animal {
     public Animal() {
     }
 
-    public Animal(String nombreAnimal, String nomnbreDueño, String telefono) {
+    public Animal(String nombreAnimal, String nomnbreDueño, String telefono) throws telefonoIncorrecto {
         this.nombreAnimal = nombreAnimal;
         this.nomnbreDueño = nomnbreDueño;
-        this.telefono = telefono;
+        if(this.telefono.matches("[0-9]{9}")){
+            this.telefono = telefono;
+        }
+        else{
+            throw new telefonoIncorrecto();
+        }
+
     }
     /**
      * @return the nombreAnimal

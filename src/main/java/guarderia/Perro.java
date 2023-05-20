@@ -4,6 +4,8 @@
  */
 package guarderia;
 
+import errores.telefonoIncorrecto;
+
 /**
  *
  * @author Dario
@@ -13,7 +15,7 @@ public class Perro extends Animal {
     public Perro() {
     }
 
-    public Perro(String nombreAnimal, String nomnbreDueño, String telefono) {
+    public Perro(String nombreAnimal, String nomnbreDueño, String telefono) throws telefonoIncorrecto {
         super(nombreAnimal, nomnbreDueño, telefono);
     }
     
