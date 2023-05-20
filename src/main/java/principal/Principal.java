@@ -23,7 +23,7 @@ public class Principal {
     public static void main(String[] args) {
         try {
             // TODO code application logic here
-            Gato ga = new Gato("luna", "maria", "12345678");
+            Gato ga = new Gato("luna", "maria", "123456789");
             Perro pe = new Perro("canela", "marta", "676245540");
         } catch (telefonoIncorrecto ex) {
             System.out.println("El telefono tiene que tener 9 digitos");
