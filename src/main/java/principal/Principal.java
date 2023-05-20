@@ -4,6 +4,8 @@
  */
 package principal;
 
+import guarderia.Registro;
+
 /**
  *
  * @author Dario
@@ -15,6 +17,8 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Registro reges = new Registro();
+        reges.listarDueño("pepe");
     }
     
 }
