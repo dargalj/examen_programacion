@@ -24,7 +24,8 @@ public abstract class Animal {
     public Animal(String nombreAnimal, String nomnbreDueño, String telefono) throws telefonoIncorrecto {
         this.nombreAnimal = nombreAnimal;
         this.nomnbreDueño = nomnbreDueño;
-        if(this.telefono.matches("[0-9]{9}")){
+        //if(this.telefono.matches("[0-9]{9}")){
+        if(this.telefono.length() < 9){
             this.telefono = telefono;
         }
         else{
